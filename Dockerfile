@@ -2,7 +2,7 @@ FROM debian:trixie
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
-    apt-get install -y wget gpg apt-transport-https lsb-release && \
+    apt-get install -y wget gpg apt-transport-https lsb-release sudo && \
     wget -qO /tmp/hyperion.pub.key https://apt.hyperion-project.org/hyperion.pub.key && \
     gpg --dearmor -o /usr/share/keyrings/hyperion.pub.gpg /tmp/hyperion.pub.key && \
     echo "deb [signed-by=/usr/share/keyrings/hyperion.pub.gpg] https://apt.hyperion-project.org/ trixie main" > /etc/apt/sources.list.d/hyperion.list && \
