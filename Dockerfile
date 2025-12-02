@@ -1,5 +1,7 @@
 FROM debian:trixie
 
+ENV LANG C.UTF-8
+
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
     apt-get install -y wget gpg apt-transport-https lsb-release qt6-base-dev sudo && \
